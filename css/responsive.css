@@ -1,0 +1,64 @@
+/* ============================================================
+   responsive.css — global breakpoint adjustments
+   Page-specific responsive rules live in each page's own CSS;
+   this file only holds cross-cutting grid/typography rules.
+   ============================================================ */
+
+/* Card grid used on home/search/dashboard pages */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+@media (max-width: 1200px) {
+  .card-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+  .container { padding-inline: var(--space-md); }
+}
+
+@media (max-width: 600px) {
+  .card-grid { grid-template-columns: 1fr; }
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.3rem; }
+  .section { padding-block: var(--space-xl); }
+}
+
+/* Two-column layout (e.g. filters + results) collapses to stack */
+.layout-2col {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .layout-2col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Dashboard shell: sidebar + content */
+.dashboard-shell {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: calc(100vh - var(--navbar-height));
+}
+
+@media (max-width: 900px) {
+  .dashboard-shell {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Hide/show helpers */
+.mobile-only { display: none; }
+.desktop-only { display: initial; }
+
+@media (max-width: 900px) {
+  .mobile-only { display: initial; }
+  .desktop-only { display: none; }
+}

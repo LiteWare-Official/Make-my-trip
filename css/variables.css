@@ -1,0 +1,88 @@
+/* ============================================================
+   variables.css
+   Design tokens shared by every page. Change a value here and
+   it cascades everywhere — never hardcode colors in page CSS.
+   ============================================================ */
+
+:root {
+  /* --- Brand palette --- */
+  --color-primary: #ff6b35;       /* MMT-style orange/coral */
+  --color-primary-dark: #e0521f;
+  --color-primary-light: #ff9166;
+  --color-secondary: #2b2d9e;     /* deep indigo accent */
+  --color-secondary-light: #4d4fd6;
+  --color-accent: #00c2a8;        /* teal accent for success/CTA */
+
+  /* --- Semantic colors --- */
+  --color-success: #1db954;
+  --color-warning: #f5a623;
+  --color-danger: #e63946;
+  --color-info: #3498db;
+
+  /* --- Light theme (default) --- */
+  --bg-base: #f6f7fb;
+  --bg-elevated: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.65);
+  --bg-glass-strong: rgba(255, 255, 255, 0.85);
+  --border-glass: rgba(255, 255, 255, 0.35);
+  --text-primary: #1a1d29;
+  --text-secondary: #5c6072;
+  --text-muted: #8b8fa3;
+  --border-color: #e6e8f0;
+  --shadow-color: rgba(20, 20, 43, 0.08);
+  --overlay-scrim: rgba(10, 12, 30, 0.55);
+
+  /* --- Spacing scale --- */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4.5rem;
+
+  /* --- Radii --- */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /* --- Shadows --- */
+  --shadow-sm: 0 2px 8px var(--shadow-color);
+  --shadow-md: 0 8px 24px var(--shadow-color);
+  --shadow-lg: 0 16px 48px var(--shadow-color);
+  --shadow-glow: 0 0 0 3px rgba(255, 107, 53, 0.18);
+
+  /* --- Typography --- */
+  --font-base: "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-display: "Poppins", "Segoe UI", sans-serif;
+
+  /* --- Motion --- */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 450ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* --- Layout --- */
+  --navbar-height: 72px;
+  --container-max: 1280px;
+  --z-navbar: 100;
+  --z-dropdown: 200;
+  --z-modal: 500;
+  --z-toast: 900;
+}
+
+/* --- Dark theme overrides (applied via [data-theme="dark"] on <html>) --- */
+[data-theme="dark"] {
+  --bg-base: #0f1117;
+  --bg-elevated: #171a23;
+  --bg-glass: rgba(23, 26, 35, 0.65);
+  --bg-glass-strong: rgba(23, 26, 35, 0.88);
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --text-primary: #f2f3f7;
+  --text-secondary: #b4b7c7;
+  --text-muted: #767a8c;
+  --border-color: #262a38;
+  --shadow-color: rgba(0, 0, 0, 0.45);
+  --overlay-scrim: rgba(0, 0, 0, 0.7);
+}

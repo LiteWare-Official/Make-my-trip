@@ -1,0 +1,183 @@
+/* ============================================================
+   home.css — hero, search widget, and homepage-only sections
+   ============================================================ */
+
+.hero {
+  position: relative;
+  padding-block: var(--space-3xl) calc(var(--space-3xl) + 3rem);
+  overflow: hidden;
+  color: #fff;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-primary-dark) 70%);
+}
+
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.12), transparent 45%),
+              radial-gradient(circle at 80% 70%, rgba(255,255,255,0.12), transparent 45%);
+}
+
+.hero-content {
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: clamp(1.9rem, 4vw, 3.2rem);
+  margin-bottom: var(--space-sm);
+  letter-spacing: -0.02em;
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  opacity: 0.9;
+  margin-bottom: var(--space-xl);
+}
+
+/* Search card */
+.search-card {
+  max-width: 900px;
+  margin-inline: auto;
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  color: var(--text-primary);
+}
+
+.search-tabs {
+  display: flex;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.search-tab {
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: transparent;
+  transition: all var(--transition-fast);
+}
+
+.search-tab.active {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.search-form {
+  display: grid;
+  grid-template-columns: 2fr 1.3fr 1fr auto;
+  gap: var(--space-md);
+  align-items: end;
+  text-align: left;
+}
+
+.search-submit {
+  height: 50px;
+}
+
+@media (max-width: 760px) {
+  .search-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Section heading */
+.section-heading {
+  margin-bottom: var(--space-lg);
+}
+
+.section-heading h2 {
+  font-size: 1.6rem;
+}
+
+/* Destination card (distinct from generic .card — image with overlay text) */
+.destination-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.destination-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.destination-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.destination-card:hover img {
+  transform: scale(1.1);
+}
+
+.destination-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.75), transparent 55%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-md);
+  color: #fff;
+}
+
+.destination-overlay h3 {
+  font-size: 1.05rem;
+}
+
+.destination-overlay span {
+  font-size: 0.78rem;
+  opacity: 0.85;
+}
+
+/* Why choose us */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+.why-card {
+  border-radius: var(--radius-md);
+  padding: var(--space-xl) var(--space-lg);
+  text-align: center;
+}
+
+.why-icon {
+  font-size: 2rem;
+  display: inline-block;
+  margin-bottom: var(--space-md);
+}
+
+.why-card h3 {
+  margin-bottom: var(--space-xs);
+  font-size: 1.05rem;
+}
+
+.why-card p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+@media (max-width: 900px) {
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .why-grid { grid-template-columns: 1fr; }
+}
