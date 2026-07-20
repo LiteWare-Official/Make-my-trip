@@ -1,0 +1,202 @@
+/* ============================================================
+   auth.css — login / register / forgot-password page styling
+   ============================================================ */
+
+.auth-page {
+  min-height: calc(100vh - var(--navbar-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xl) var(--space-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-primary-dark) 80%);
+  opacity: 0.08;
+}
+
+.auth-shell {
+  width: 100%;
+  max-width: 440px;
+}
+
+.auth-card {
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl) var(--space-xl);
+}
+
+.auth-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: var(--space-lg);
+}
+
+.auth-title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: var(--space-2xs);
+}
+
+.auth-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-xl);
+}
+
+/* Role selector (buyer/seller) on register page */
+.role-select {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.role-option {
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.role-option:hover {
+  border-color: var(--color-primary-light);
+}
+
+.role-option.selected {
+  border-color: var(--color-primary);
+  background: rgba(255, 107, 53, 0.06);
+}
+
+.role-option .role-icon {
+  font-size: 1.6rem;
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.role-option .role-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.role-option .role-desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Divider with "OR" text */
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin: var(--space-lg) 0;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border-color);
+}
+
+/* Google button */
+.btn-google {
+  background: var(--bg-elevated);
+  border: 1.5px solid var(--border-color);
+  color: var(--text-primary);
+  gap: var(--space-sm);
+}
+
+.btn-google:hover:not(:disabled) {
+  background: var(--bg-base);
+}
+
+.auth-footer-link {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-top: var(--space-lg);
+}
+
+.auth-footer-link a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.forgot-link {
+  display: block;
+  text-align: right;
+  font-size: 0.82rem;
+  color: var(--color-primary);
+  margin-top: -0.6rem;
+  margin-bottom: var(--space-lg);
+  font-weight: 500;
+}
+
+.auth-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-lg);
+}
+
+/* Password strength meter */
+.password-strength {
+  display: flex;
+  gap: 4px;
+  margin-top: var(--space-xs);
+}
+
+.password-strength .bar {
+  height: 4px;
+  flex: 1;
+  border-radius: var(--radius-pill);
+  background: var(--border-color);
+  transition: background var(--transition-fast);
+}
+
+.password-strength .bar.weak { background: var(--color-danger); }
+.password-strength .bar.medium { background: var(--color-warning); }
+.password-strength .bar.strong { background: var(--color-success); }
+
+/* Verify email notice banner */
+.verify-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: rgba(245, 166, 35, 0.12);
+  border: 1px solid rgba(245, 166, 35, 0.3);
+  color: var(--color-warning);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  margin-bottom: var(--space-lg);
+}
+
+.verify-banner button {
+  margin-left: auto;
+  font-weight: 700;
+  text-decoration: underline;
+  flex-shrink: 0;
+  color: var(--color-warning);
+}
+  
