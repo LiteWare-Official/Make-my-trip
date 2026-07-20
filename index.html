@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WanderGo — Hotels, Packages, Flights &amp; Buses</title>
+  <meta name="description" content="Search and book hotels, tour packages, flights, and buses — all in one place." />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/layout.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
+  <link rel="stylesheet" href="/css/home.css" />
+</head>
+<body>
+  <!-- Full-page loader, shown until auth state + critical data resolve -->
+  <div class="page-loader" id="page-loader">
+    <div class="logo-loader">
+      <div class="logo-mark" style="width:56px;height:56px;border-radius:16px;
+        background:linear-gradient(135deg,var(--color-primary),var(--color-secondary));
+        display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.6rem;">✈</div>
+      <div class="spinner spinner-dark"></div>
+    </div>
+  </div>
+
+  <!-- Navbar mount point (populated by navbar.js) -->
+  <div id="navbar-root"></div>
+
+  <main>
+    <!-- ================= HERO / SEARCH ================= -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-content fade-in-up">
+        <h1>Plan your next trip <span class="text-primary-color">effortlessly</span></h1>
+        <p class="hero-sub">Compare hotels, tour packages, flights &amp; buses — book in minutes.</p>
+
+        <div class="search-card glass-strong">
+          <div class="search-tabs" id="search-tabs">
+            <button class="search-tab active" data-type="hotel">🏨 Hotels</button>
+            <button class="search-tab" data-type="package">🧳 Packages</button>
+            <button class="search-tab" data-type="flight">✈ Flights</button>
+            <button class="search-tab" data-type="bus">🚌 Buses</button>
+          </div>
+
+          <form id="hero-search-form" class="search-form">
+            <div class="search-field">
+              <label class="form-label">Destination</label>
+              <input type="text" id="search-destination" class="form-control" placeholder="City, state, or country" autocomplete="off" required />
+            </div>
+            <div class="search-field">
+              <label class="form-label">Travel Date</label>
+              <input type="date" id="search-date" class="form-control" required />
+            </div>
+            <div class="search-field">
+              <label class="form-label">Guests</label>
+              <input type="number" id="search-guests" class="form-control" min="1" value="2" required />
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg search-submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= POPULAR DESTINATIONS ================= -->
+    <section class="section container">
+      <div class="section-heading">
+        <h2>Popular Destinations</h2>
+        <p class="text-muted">Hand-picked places travelers are booking right now</p>
+      </div>
+      <div class="card-grid" id="destinations-grid">
+        <!-- populated by home.js -->
+      </div>
+    </section>
+
+    <!-- ================= FEATURED HOTELS ================= -->
+    <section class="section container">
+      <div class="section-heading flex-between">
+        <div>
+          <h2>Featured Hotels</h2>
+          <p class="text-muted">Top-rated stays loved by our travelers</p>
+        </div>
+        <a href="/pages/search-results.html" class="btn btn-outline btn-sm desktop-only">View All</a>
+      </div>
+      <div class="card-grid" id="hotels-grid">
+        <!-- populated by home.js -->
+      </div>
+    </section>
+
+    <!-- ================= FEATURED PACKAGES ================= -->
+    <section class="section container">
+      <div class="section-heading flex-between">
+        <div>
+          <h2>Trending Tour Packages</h2>
+          <p class="text-muted">Curated getaways, all-inclusive pricing</p>
+        </div>
+        <a href="/pages/search-results.html?type=package" class="btn btn-outline btn-sm desktop-only">View All</a>
+      </div>
+      <div class="card-grid" id="packages-grid">
+        <!-- populated by home.js -->
+      </div>
+    </section>
+
+    <!-- ================= WHY CHOOSE US ================= -->
+    <section class="section container">
+      <div class="why-grid">
+        <div class="why-card glass">
+          <span class="why-icon">🔒</span>
+          <h3>Secure Booking</h3>
+          <p>Your payments and data are protected end-to-end.</p>
+        </div>
+        <div class="why-card glass">
+          <span class="why-icon">💸</span>
+          <h3>Best Price Guarantee</h3>
+          <p>We compare prices so you always get the best deal.</p>
+        </div>
+        <div class="why-card glass">
+          <span class="why-icon">🎧</span>
+          <h3>24/7 Support</h3>
+          <p>Our team is here for you before, during, and after your trip.</p>
+        </div>
+        <div class="why-card glass">
+          <span class="why-icon">⭐</span>
+          <h3>Verified Reviews</h3>
+          <p>Real reviews from real travelers, every time.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-root"></div>
+
+  <script type="module" src="/js/pages/home.js"></script>
+</body>
+</html>
